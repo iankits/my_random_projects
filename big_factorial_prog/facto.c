@@ -44,7 +44,7 @@ int main(int argc, char** argv){
     //   eg. array has a[0]=x, a[1], a[3]=y values,
     //   this means till now program has utilized 3 spaces, 
     //   so len will return 3
-    for(s=len_index;s>=0;s--) {
+    for(s=len_index+6;s>=0;s--) {
       if((a[s]!=0)|| (temp!=0)){
 	len++;
 	// DEBUG
@@ -77,11 +77,14 @@ int main(int argc, char** argv){
       //      printf("\n\tj=%ld, t(a[j]*i+q)=%ld, r(t%%10)=%ld, q(t/10)=%ld a[%ld]=%d",j,t,r,q,j,a[j]);
     }
   }
+
+  printf("\n\nActual Length of the Factorial Array: %ld",prev_len);
   
   // Print the Calculated Factorial
   temp=0;
   printf("\nFactorial --> ");
-  for(i=max-1;i>=0;i--){
+//  for(i=max-1;i>=0;i--){
+  for(i=prev_len+6;i>=0;i--){
     if((a[i]!=0) || (temp!=0)){
       printf("%d", a[i]);
       temp=1;
